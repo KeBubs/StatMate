@@ -1,10 +1,10 @@
 import Header from '../../components/Header/header'
 
-export default function SerieA () {
+export default function TodaysFixtures () {
     return (
         <>
         <Header/>
-            <h1>This is the Serie A Page</h1>
+            <h1>This is the Todays Fixtures Page</h1>
         </>
     )
 }

@@ -1,7 +1,10 @@
+import Header from '../../components/Header/header'
+
 export default function PremierLeague () {
     return (
-        <div>
+        <>
+        <Header/>
             <h1>This is the Premier League Page</h1>
-        </div>
+        </>
     )
 }

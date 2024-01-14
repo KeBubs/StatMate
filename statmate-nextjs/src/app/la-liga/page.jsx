@@ -1,7 +1,10 @@
+import Header from '../../components/Header/header'
+
 export default function LaLiga () {
     return (
-        <div>
+        <>
+        <Header/>
             <h1>This is the La Liga Page</h1>
-        </div>
+        </>
     )
 }
