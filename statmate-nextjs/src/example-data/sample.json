@@ -1,0 +1,141 @@
+{
+  "filters": {
+    "dateFrom": "2024-01-15",
+    "dateTo": "2024-01-16",
+    "permission": "TIER_ONE"
+  },
+  "resultSet": {
+    "count": 2,
+    "competitions": "SA,PPL",
+    "first": "2024-01-15",
+    "last": "2024-01-15",
+    "played": 1
+  },
+  "matches": [
+    {
+      "area": {
+        "id": 2114,
+        "name": "Italy",
+        "code": "ITA",
+        "flag": "https://crests.football-data.org/784.svg"
+      },
+      "competition": {
+        "id": 2019,
+        "name": "Serie A",
+        "code": "SA",
+        "type": "LEAGUE",
+        "emblem": "https://crests.football-data.org/SA.png"
+      },
+      "season": {
+        "id": 1600,
+        "startDate": "2023-08-19",
+        "endDate": "2024-05-26",
+        "currentMatchday": 20,
+        "winner": null
+      },
+      "id": 444444,
+      "utcDate": "2024-01-15T19:45:00Z",
+      "status": "FINISHED",
+      "matchday": 20,
+      "stage": "REGULAR_SEASON",
+      "group": null,
+      "lastUpdated": "2024-01-15T22:39:02Z",
+      "homeTeam": {
+        "id": 102,
+        "name": "Atalanta BC",
+        "shortName": "Atalanta",
+        "tla": "ATA",
+        "crest": "https://crests.football-data.org/102.svg"
+      },
+      "awayTeam": {
+        "id": 470,
+        "name": "Frosinone Calcio",
+        "shortName": "Frosinone",
+        "tla": "FRO",
+        "crest": "https://crests.football-data.org/470.png"
+      },
+      "score": {
+        "winner": "HOME_TEAM",
+        "duration": "REGULAR",
+        "fullTime": {
+          "home": 5,
+          "away": 0
+        },
+        "halfTime": {
+          "home": 3,
+          "away": 0
+        }
+      },
+      "odds": {
+        "msg": "Activate Odds-Package in User-Panel to retrieve odds."
+      },
+      "referees": [
+        {
+          "id": 57794,
+          "name": "Alessandro Prontera",
+          "type": "REFEREE",
+          "nationality": "Italy"
+        }
+      ]
+    },
+    {
+      "area": {
+        "id": 2187,
+        "name": "Portugal",
+        "code": "POR",
+        "flag": "https://crests.football-data.org/765.svg"
+      },
+      "competition": {
+        "id": 2017,
+        "name": "Primeira Liga",
+        "code": "PPL",
+        "type": "LEAGUE",
+        "emblem": "https://crests.football-data.org/PPL.png"
+      },
+      "season": {
+        "id": 1603,
+        "startDate": "2023-08-13",
+        "endDate": "2024-05-19",
+        "currentMatchday": 17,
+        "winner": null
+      },
+      "id": 445554,
+      "utcDate": "2024-01-15T20:15:00Z",
+      "status": "IN_PLAY",
+      "matchday": 17,
+      "stage": "REGULAR_SEASON",
+      "group": null,
+      "lastUpdated": "2024-01-15T23:09:07Z",
+      "homeTeam": {
+        "id": 5543,
+        "name": "Vitória SC",
+        "shortName": "Vitória SC",
+        "tla": "GUI",
+        "crest": "https://crests.football-data.org/5543.png"
+      },
+      "awayTeam": {
+        "id": 712,
+        "name": "FC Arouca",
+        "shortName": "Arouca",
+        "tla": "FCA",
+        "crest": "https://crests.football-data.org/712.png"
+      },
+      "score": {
+        "winner": "HOME_TEAM",
+        "duration": "REGULAR",
+        "fullTime": {
+          "home": 2,
+          "away": 1
+        },
+        "halfTime": {
+          "home": 1,
+          "away": 1
+        }
+      },
+      "odds": {
+        "msg": "Activate Odds-Package in User-Panel to retrieve odds."
+      },
+      "referees": []
+    }
+  ]
+}
