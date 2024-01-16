@@ -16,7 +16,7 @@ export default function TodaysFixtures () {
     return (
         <>
         <Header/>
-        <main className='mainContainer'>
+        <main className={Styles.mainContainer}>
             <div className={Styles.container}>
             {matches.map((match, index) => (
         <section key={index} className={Styles.fixture}>

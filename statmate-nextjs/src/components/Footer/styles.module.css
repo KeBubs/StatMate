@@ -14,7 +14,7 @@
     background-color: var(--primary-colour);
     color: var(--secondary-colour);
     width: 100%;
-    height: 20%;
+    height: 100%;
     justify-content: space-between;
     align-items: center;
 }
