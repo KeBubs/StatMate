@@ -1,17 +1,24 @@
 import Header from '../../components/Header/header'
-import Data from '../../example-data/sample.json'
 import Styles from './todays-fixtures.module.css'
-
-
+import { fetchMatches } from '../../functions/helpers'
 // @refresh reset
 
+// Import URL from .env file
+const todaysMatches = process.env.TODAYS_MATCHES
+const authToken = process.env.API_KEY
 
-const matches = Data.matches
-// const homeTeamName = matches.homeTeam.name
-// const awayTeamName = matches.awayTeam.name
-console.log(matches)
 
-export default function TodaysFixtures () {
+
+
+export default async function TodaysFixtures () {
+
+
+    // Function to fetch all matches for today.
+    
+    
+    const Data = await fetchMatches(todaysMatches, authToken)
+    const matches = Data.matches
+    console.log('The returned API data is: ', Data)
     
     return (
         <>
