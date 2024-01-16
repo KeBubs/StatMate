@@ -20,19 +20,25 @@
 }
 
 /* Text which contains information about me */
-.author {
+.authorContainer {
     grid-area: a;
-    margin-left: 5%;
+    margin-left: 20%;
 }
 
 /* Links which are on the right side of the page */
-.links {
+.linkContainer {
     grid-area: b;
+    margin-right: 20%;
+    
+}
+
+.links {
+    color: var(--secondary-colour);
 }
 
 /* Credits of the Footer, lower left portion */
-.credits {
+.creditContainer {
     grid-area: c;
-    margin-left: 5%;
+    margin-left: 20%;
 
 }
