@@ -9,7 +9,6 @@ const authToken = process.env.API_KEY
 
 
 
-
 export default async function TodaysFixtures () {
     const Data = await fetchMatches(todaysMatches, authToken)
     const matches = Data.matches
@@ -20,9 +19,9 @@ export default async function TodaysFixtures () {
         <main className={Styles.mainContainer}>
             <div className={Styles.container}>
             {matches.map((match, index) => {
-                const timeRegex = /T(\d{2}:\d{2}:\d{2})Z/;
-                const matchTime = match.utcDate.match(timeRegex);
-                const time = matchTime ? matchTime[1] : '';
+                const timeRegex = /T(\d{2}:\d{2})/;
+                const matchTime = match.utcDate.match(timeRegex)[1];
+                const time = matchTime ? matchTime : 'Check Back for the Time';
 
                 return (
                     <section key={index} className={Styles.fixture}>
@@ -31,8 +30,7 @@ export default async function TodaysFixtures () {
                         {match.score.fullTime.home == (typeof(number)) ? 
                         ( 
                         <>
-                            <p>{match.score.fullTime.home}</p>
-                            <p>{match.score.fullTime.away}</p>
+                            <p>{match.score.fullTime.home}{match.score.fullTime.away}</p>
                         </>
                         )
                         : 

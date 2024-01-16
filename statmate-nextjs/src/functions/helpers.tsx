@@ -9,6 +9,5 @@ export async function fetchMatches(url: string, token: string) {
     }
 })
 const todaysData: JSON  = await response.json()
-console.log(todaysData)
 return todaysData;
 }
