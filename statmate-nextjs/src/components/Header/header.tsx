@@ -5,7 +5,7 @@ import Link from 'next/link'
 export default function Header () {
     return (
         <header className={Styles.container}>
-            <h1 className={Styles.logo}>StatMate</h1>
+            <Link className={Styles.link} href='/'><h1 className={Styles.logo}>StatMate</h1></Link>
             <Link className={Styles.link} href='/todays-fixtures'>Todays Fixtures</Link>
             <Link className={Styles.link} href='/league/premier-league'>Premier League</Link>
             <Link className={Styles.link} href='/league/bundesliga'>Bundesliga</Link>
