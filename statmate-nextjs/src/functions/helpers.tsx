@@ -7,6 +7,7 @@ export async function fetchMatches() {
     if (!token) {
         throw new Error('API_KEY is not set');
     }
+    console.log(token)
     const url = `https://api.football-data.org/v4/matches`
     const response = await fetch(url, {
     headers: {
@@ -21,8 +22,10 @@ return todaysData;
 // Assumes the league code has already been appended to the URL.
 export async function fetchStandings(code: string | null) {
     if (!token) {
+        
         throw new Error('API_KEY is not set');
     }
+    console.log(token)
     const url = `https://api.football-data.org/v4/competitions/${code}/standings?season=2023`
     const response = await fetch(url, {
     method: "GET",
