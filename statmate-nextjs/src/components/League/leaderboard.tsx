@@ -19,8 +19,12 @@ interface LeaderboardItem {
         goalDifference: number
 }
 
+type LeaderboardProps = {
+    leaderboard: LeaderboardItem[];
+};
 
-export default function LeaderBoard({leaderboard}: {leaderboard: object}) {
+
+export default function LeaderBoard({leaderboard}: LeaderboardProps) {
 
     
 
