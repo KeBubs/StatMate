@@ -70,7 +70,7 @@ export default function League ({ params }: {params: {id: string}}) {
             <h1 >Welcome, to the {league}... </h1>
             </section>
             <section className={Styles.leaderboardContainer}>
-                <LeaderBoard key={uuidv4} leaderboard={leaderboard}/>
+                <LeaderBoard key={uuidv4()} leaderboard={leaderboard}/>
             </section>
         </main>
             
