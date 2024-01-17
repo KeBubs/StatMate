@@ -1,0 +1,25 @@
+/* Styling for the Leaderboard*/
+
+.leaderboard {
+    display: grid;
+    grid-template-columns: repeat(11, auto);
+    gap: 5px;
+    width: 90%;
+    color: black;
+    font-size: smaller;
+}
+
+/* Goals For styling*/
+.GF {
+    color: blue;
+}
+
+/* Goals Against Styling */
+.GA {
+    color: red;
+}
+
+/* Goal Difference Styling */
+.GD {
+    color: green;
+}

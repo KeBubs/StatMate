@@ -1,0 +1,22 @@
+.mainContainer {
+    display: flex;
+    gap: 10px;
+    height: 100%;
+    flex-direction: column;
+}
+
+.title {
+    color: var(--primary-colour);
+    align-self: center;
+    justify-items: center;
+}
+
+.leaderboardContainer {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+    align-items: center;
+    color: var(--primary-colour)
+}
+

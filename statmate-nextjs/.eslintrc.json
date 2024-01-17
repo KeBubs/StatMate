@@ -1,0 +1,9 @@
+{
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "curly": "error",
+    "react/no-unescaped-entities": "off",
+    // "quotes": ["error", "double"],
+    "line-comment-position": ["error", { "position": "above" }]
+  }
+}

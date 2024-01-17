@@ -1,0 +1,44 @@
+/* Styling for the Footer Width etc is in the Globals CSS */
+
+
+/* Styling for the Container which holds all of the Footer information */
+.container {
+    display: grid;
+    grid-template-columns: 20% 10%;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        "a  b"
+        "a  b"
+        "c  b"
+        "c  b";
+    background-color: var(--primary-colour);
+    color: var(--secondary-colour);
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Text which contains information about me */
+.authorContainer {
+    grid-area: a;
+    margin-left: 20%;
+}
+
+/* Links which are on the right side of the page */
+.linkContainer {
+    grid-area: b;
+    margin-right: 20%;
+    
+}
+
+.links {
+    color: var(--secondary-colour);
+}
+
+/* Credits of the Footer, lower left portion */
+.creditContainer {
+    grid-area: c;
+    margin-left: 20%;
+
+}
