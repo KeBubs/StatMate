@@ -1,5 +1,6 @@
 'use client'
 import 'dotenv/config'
+import { v4 as uuidv4 } from 'uuid'
 
 import Header from '../../../components/Header/header'
 import Styles from './styles.module.css'
@@ -13,6 +14,8 @@ import { useState, useEffect } from 'react'
 export default function League ({ params }: {params: {id: string}}) {
     const [league, setLeague] = useState<string | null>(null)
     const [code, setCode] = useState<string | null>(null)
+    const [data, setData] = useState<JSON | null>(null)
+    const [loading, setLoading] = useState<boolean>(true)
 
     const leaderboard : Object = Data.standings[0].table
     // const position : Number = leaderboard.position
@@ -41,28 +44,33 @@ export default function League ({ params }: {params: {id: string}}) {
             setCode('SA')
             break
     }
+    setLoading(false)
     }, [])
 
     useEffect(() => {
         const fetchInfo = async () => {
-        const response = await fetchStandings(code)
-        console.log(response)
         console.log('Im running in this useEffect')
+        const response = await fetchStandings(code)
+        
+        setData(response)
         }
         
         fetchInfo()
-    }, [code])
-    
+        {console.log(data)}
+    }, [loading])
+
 
     return (
+
         <>
         <Header/>
         <main className={Styles.mainContainer}>
             <section className={Styles.title}>
+                
             <h1 >Welcome, to the {league}... </h1>
             </section>
             <section className={Styles.leaderboardContainer}>
-                <LeaderBoard leaderboard={leaderboard}/>
+                <LeaderBoard key={uuidv4} leaderboard={leaderboard}/>
             </section>
         </main>
             

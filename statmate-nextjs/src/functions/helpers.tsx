@@ -19,11 +19,13 @@ return todaysData;
 export async function fetchStandings(code: string | null) {
     const url = `https://api.football-data.org/v4/competitions/${code}/standings?season=2023`
     const response = await fetch(url, {
+    method: "GET",
     headers: {
         "X-Auth-Token": token
     },
     mode: "cors"
 })
+console.log(response.headers)
 const Data: JSON  = await response.json()
 return Data
 }
