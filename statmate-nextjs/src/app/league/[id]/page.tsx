@@ -8,6 +8,7 @@ import LeaderBoard from '../../../components/League/leaderboard'
 import Data from '../../../example-data/sample.json'
 import { fetchStandings } from '../../../functions/helpers'
 import { useState, useEffect } from 'react'
+import { LeaderboardItem } from '../../../components/League/leaderboard'
 
 
 
@@ -17,7 +18,7 @@ export default function League ({ params }: {params: {id: string}}) {
     const [data, setData] = useState<JSON | null>(null)
     const [loading, setLoading] = useState<boolean>(true)
 
-    const leaderboard : Object = Data.standings[0].table
+    const leaderboard : LeaderboardItem[] = Data.standings[0].table
     // const position : Number = leaderboard.position
 
     useEffect(()=>{

@@ -2,7 +2,7 @@ import Styles from './leaderboard.module.css'
 
 
 
-interface LeaderboardItem {
+export interface LeaderboardItem {
     position: number,
     team: {
         name: string,
