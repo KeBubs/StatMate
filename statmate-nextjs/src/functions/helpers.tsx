@@ -1,8 +1,10 @@
 // Do I need to import .env file?
 import 'dotenv/config'
+const token = process.env.API_KEY
 
-// Function to fetch matches, requires endpoint URL and Auth Token passed in as an argument
-export async function fetchMatches(url: string, token: string) {
+// Function to fetch today's matches, requires endpoint URL and Auth Token passed in as an argument
+export async function fetchMatches() {
+    const url = `https://api.football-data.org/v4/matches`
     const response = await fetch(url, {
     headers: {
         "X-Auth-Token": token
@@ -10,4 +12,18 @@ export async function fetchMatches(url: string, token: string) {
 })
 const todaysData: JSON  = await response.json()
 return todaysData;
+}
+
+// Function to fetch League Standings to generate a leaderboard, requires endpoint URL, Auth Token passed in as argument's.
+// Assumes the league code has already been appended to the URL.
+export async function fetchStandings(code: string | null) {
+    const url = `https://api.football-data.org/v4/competitions/${code}/standings?season=2023`
+    const response = await fetch(url, {
+    headers: {
+        "X-Auth-Token": token
+    },
+    mode: "cors"
+})
+const Data: JSON  = await response.json()
+return Data
 }
