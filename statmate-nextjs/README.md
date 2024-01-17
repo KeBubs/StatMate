@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Football Fixture and Statistic Dashboard
 
-## Getting Started
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Overview
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Welcome to StatMate, the Football Fixture and Statistic Dashboard. This app provides a view of upcoming fixtures and statistics for the top 5 football leagues around the world: Premier League, Bundesliga, La Liga, Ligue 1, and Serie A.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Fixture Information:** View upcoming fixtures for each league.
+- **League Selection:** Easily switch between different leagues.
+- **Statistics:** Get insightful statistics for teams and players.
 
-## Learn More
+## Screenshots
 
-To learn more about Next.js, take a look at the following resources:
+*TO BE UPLOADED*
+*Caption for Screenshot 1.*
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+*TO BE UPLOADED*
+*Caption for Screenshot 2.*
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Installation
 
-## Deploy on Vercel
+1. Clone the repository: `git clone https://github.com/your-username/your-repository.git`
+2. Install dependencies: `npm install`
+3. Start the app: `npm start`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Usage
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Open the app in your preferred browser.
+2. Select your desired league from the navigation menu.
+3. Explore upcoming fixtures and statistics.
+
+## Technologies Used
+
+- React.js
+- Node.js
+- Express.js
+- https://www.football-data.org (API)
+
+## Acknowledgements
+
+- Special thanks to Daniel from https://www.football-data.org for providing football data.
+
+## Contact
+
+For inquiries and support, please contact me at [kebusby@hotmail.co.uk](mailto:your.email@example.com).
+
+Happy exploring the world of football fixtures and statistics!
