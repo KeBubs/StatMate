@@ -10,7 +10,7 @@ const authToken = process.env.API_KEY
 
 
 export default async function TodaysFixtures () {
-    const Data = await fetchMatches(todaysMatches, authToken)
+    const Data = await fetchMatches()
     const matches = Data.matches
     
     return (
