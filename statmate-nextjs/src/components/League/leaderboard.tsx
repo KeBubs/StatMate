@@ -1,11 +1,4 @@
-'use client'
-
-import { useEffect, useState } from 'react'
 import Styles from './leaderboard.module.css'
-import { v4 as uuidv4 } from 'uuid'
-import { fetchStandings } from '../../functions/helpers'
-
-
 
 export interface LeaderboardItem {
     position: number,
@@ -25,26 +18,19 @@ export interface LeaderboardItem {
 }
 
 interface LeaderBoardProps{
-    value: any;
+    value: object;
 };
 
+type data = {
+    value: object
+}
+
+
 const LeaderBoard: React.FC<LeaderBoardProps> =  ({ value }) => {
-    const [loading, setLoading] = useState<boolean>(true)
-    const [data, setData] = useState<undefined | object>()
-    // const data = value.standings[0].table
-
-    useEffect(() => {
-        setData(value.standings[0].table)
-        setLoading(false)
-        console.log('Data is', data)
-    },[value])
-
-    // console.log('Im the data', data.table)
     
+    const data = value.standings[0].table
 
-    return data == undefined ? ( <p>Loading...</p> ) : (
-    
-
+    return (
         <div className={Styles.leaderboard}>
                         <h3>Position</h3>
                         <h3>Team Name</h3>

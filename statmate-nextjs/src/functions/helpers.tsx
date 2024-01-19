@@ -32,7 +32,6 @@ export async function fetchStandings(code: string) {
     }
 })
 const Data: JSON  = await response.json()
-console.log('Printing from the helper function', Data)
 return Data
 }
 
