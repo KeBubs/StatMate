@@ -36,7 +36,7 @@ export default async function TodaysFixtures () {
                         : 
                         (
                         <>
-                            <p>{time}</p>
+                            {match.status == 'POSTPONED' ? (<p>Postponed</p>) : (<p>{time}</p>)}
                         </>
                         )
                         }
