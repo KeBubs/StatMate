@@ -29,10 +29,10 @@ export async function fetchStandings(code: string) {
     method: "GET",
     headers: {
         "X-Auth-Token": token
-    },
-    mode: "cors"
+    }
 })
 const Data: JSON  = await response.json()
+console.log('Printing from the helper function', Data)
 return Data
 }
 

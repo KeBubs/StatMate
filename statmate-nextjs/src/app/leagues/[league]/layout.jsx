@@ -6,13 +6,14 @@ export default function LeagueLayout({ children, params }) {
         // URL -> /league/PL/nike-air-max-97
         // `params` -> { tag: 'league', item: 'PL' }
         return (
-            <>
+            
+            <section>
                 <Header/>
                 <Suspense fallback={<Loading/>}>
-                    <section>{children}</section>
+                    {children}
                 </Suspense>
-                
-            </>
+            </section>
+            
             
         )
 }
