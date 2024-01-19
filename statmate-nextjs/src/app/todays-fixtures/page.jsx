@@ -1,11 +1,7 @@
 import Header from '../../components/Header/header'
 import Styles from './todays-fixtures.module.css'
 import { fetchMatches } from '../../functions/helpers'
-// @refresh reset
 
-// Import URL from .env file
-const todaysMatches = process.env.TODAYS_MATCHES
-const authToken = process.env.API_KEY
 
 
 

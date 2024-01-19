@@ -18,15 +18,13 @@ export interface LeaderboardItem {
 }
 
 interface LeaderBoardProps{
-    value: object;
+    value: any;
 };
 
-type data = {
-    value: object
-}
 
 
 const LeaderBoard: React.FC<LeaderBoardProps> =  ({ value }) => {
+    
     
     const data = value.standings[0].table
 
