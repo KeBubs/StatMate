@@ -1,7 +1,6 @@
 // Do I need to import .env file?
 import 'dotenv/config'
 const token = process.env.NEXT_PUBLIC_API_KEY
-import 
 
 // Function to fetch today's matches, requires endpoint URL and Auth Token passed in as an argument
 export async function fetchMatches() {
@@ -10,7 +9,7 @@ export async function fetchMatches() {
     }
     const url = `https://api.football-data.org/v4/matches`
     const response = await fetch(url, {
-    revalidate: 10,
+    next: { revalidate: 10},
     headers: {
         "X-Auth-Token": token
     }
@@ -29,6 +28,7 @@ export async function fetchStandings(code: string) {
     const url = `https://api.football-data.org/v4/competitions/${code}/standings?season=2023`
     const response = await fetch(url, {
     method: "GET",
+    next: { revalidate: 10},
     headers: {
         "X-Auth-Token": token
     }
