@@ -9,7 +9,7 @@ const url = `https://api.football-data.org/v4/matches`
 
 export default async function TodaysFixtures () {
         const response = await fetch(url, {
-        next: { revalidate: 60},
+        next: { revalidate: 30},
         headers: {
             "X-Auth-Token": token
         }

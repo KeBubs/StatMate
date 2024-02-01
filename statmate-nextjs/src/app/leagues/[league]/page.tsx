@@ -13,7 +13,7 @@ const url = `https://api.football-data.org/v4/competitions/${params.league}/stan
 
     const response = await fetch(url, {
         method: "GET",
-        next: { revalidate: 10},
+        next: { revalidate: 30},
         headers: new Headers({
                 "X-Auth-Token": token ? token : ""
             })
