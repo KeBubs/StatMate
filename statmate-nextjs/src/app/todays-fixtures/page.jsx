@@ -1,14 +1,22 @@
 import Header from '../../components/Header/header'
 import Styles from './todays-fixtures.module.css'
-import { fetchMatches } from '../../functions/helpers'
-export const revalidate = 30
+// import { fetchMatches } from '../../functions/helpers'
+import 'dotenv/config'
+const token = process.env.NEXT_PUBLIC_API_KEY
 
-
+const url = `https://api.football-data.org/v4/matches`
 
 
 export default async function TodaysFixtures () {
-    const Data = await fetchMatches()
-    const matches = Data.matches
+        const response = await fetch(url, {
+        next: { revalidate: 60},
+        headers: {
+            "X-Auth-Token": token
+        }
+    })
+    const todaysData = await response.json()
+    
+    const matches = todaysData.matches
     
     return (
         <>
@@ -24,10 +32,10 @@ export default async function TodaysFixtures () {
                     <section key={index} className={Styles.fixture}>
                         <img className={Styles.crest} src={match.homeTeam.crest} alt={`Home Team Crest`} />
                         <p>{`${match.homeTeam.name}`}</p>
-                        {match.score.fullTime.home == (typeof(number)) ? 
+                        {match.status == "IN_PLAY" ? 
                         ( 
                         <>
-                            <p>{match.score.fullTime.home}{match.score.fullTime.away}</p>
+                            <p>{match.score.fullTime.home} - {match.score.fullTime.away}</p>
                         </>
                         )
                         : 
@@ -48,13 +56,3 @@ export default async function TodaysFixtures () {
         </>
     )
 }
-
-/*
-
-<h1>This is the Todays Fixtures Page</h1>
-        <div>
-            <p>The Home Team is {homeTeamName}</p>
-            <p>The Away Team is {awayTeamName}</p>
-        </div>
-
-*/

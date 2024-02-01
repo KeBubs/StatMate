@@ -1,12 +1,26 @@
 import Styles from './styles.module.css'
 import LeaderBoard from '../../../components/League/leaderboard'
 import { fetchStandings } from '@/functions/helpers'
+import 'dotenv/config'
+const token = process.env.NEXT_PUBLIC_API_KEY
 
 const League = async ({ params }: {params: {league: string}}) => {
 
+
+const url = `https://api.football-data.org/v4/competitions/${params.league}/standings?season=2023`
     // Make the fetch Request using the parameter code, return the data.
     //      Pass the data as a prop to the leaderboard component below. 
-    const data = await fetchStandings(params.league)
+
+    const response = await fetch(url, {
+        method: "GET",
+        next: { revalidate: 10},
+        headers: {
+            "X-Auth-Token": token
+        }
+    })
+    const data: JSON  = await response.json()
+
+
     let leagueName: string = ""
 
     switch(params.league){
