@@ -1,6 +1,7 @@
 import Header from '../../components/Header/header'
 import Styles from './todays-fixtures.module.css'
 import { fetchMatches } from '../../functions/helpers'
+export const revalidate = 30
 
 
 

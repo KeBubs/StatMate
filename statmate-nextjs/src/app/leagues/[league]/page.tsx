@@ -1,5 +1,6 @@
 import Styles from './styles.module.css'
 import LeaderBoard from '../../../components/League/leaderboard'
+export const revalidate = 30
 import { fetchStandings } from '@/functions/helpers'
 
 const League = async ({ params }: {params: {league: string}}) => {
