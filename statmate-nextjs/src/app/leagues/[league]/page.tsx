@@ -2,7 +2,7 @@ import Styles from './styles.module.css'
 import LeaderBoard from '../../../components/League/leaderboard'
 import { fetchStandings } from '@/functions/helpers'
 import 'dotenv/config'
-const token = process.env.NEXT_PUBLIC_API_KEY
+const token: string | undefined = process.env.NEXT_PUBLIC_API_KEY
 
 const League = async ({ params }: {params: {league: string}}) => {
 
@@ -14,9 +14,9 @@ const url = `https://api.football-data.org/v4/competitions/${params.league}/stan
     const response = await fetch(url, {
         method: "GET",
         next: { revalidate: 10},
-        headers: {
-            "X-Auth-Token": token
-        }
+        headers: new Headers({
+                "X-Auth-Token": token ? token : ""
+            })
     })
     const data: JSON  = await response.json()
 
