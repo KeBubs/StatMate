@@ -30,9 +30,10 @@ export default async function TodaysFixtures () {
 
                 return (
                     <section key={index} className={Styles.fixture}>
+                        {match.status === "IN_PLAY" || "PAUSED" ? (<p></p>) : (<p>{`K.O: ${time}`}</p>) }
                         <img className={Styles.crest} src={match.homeTeam.crest} alt={`Home Team Crest`} />
                         <p>{`${match.homeTeam.name}`}</p>
-                        {match.status == "IN_PLAY" ? 
+                        {match.status !== "SCHEDULED" || "POSTPONED" || "SUSPENDED" || "CANCELLED" ? 
                         ( 
                         <>
                             <p>{match.score.fullTime.home} - {match.score.fullTime.away}</p>
@@ -42,6 +43,7 @@ export default async function TodaysFixtures () {
                         (
                         <>
                             {match.status == 'POSTPONED' ? (<p>Postponed</p>) : (<p>{time}</p>)}
+                            
                         </>
                         )
                         }
