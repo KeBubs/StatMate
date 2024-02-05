@@ -9,7 +9,7 @@ const url = `https://api.football-data.org/v4/matches`
 
 export default async function TodaysFixtures () {
         const response = await fetch(url, {
-        next: { revalidate: 10},
+        next: { revalidate: 30},
         headers: {
             "X-Auth-Token": token
         }
@@ -20,7 +20,6 @@ export default async function TodaysFixtures () {
     
     return (
         <>
-        <Header/>
         <main className={Styles.mainContainer}>
             <div className={Styles.container}>
             {matches.map((match, index) => {
@@ -30,24 +29,23 @@ export default async function TodaysFixtures () {
 
                 return (
                     <section key={index} className={Styles.fixture}>
-                        {match.status === "IN_PLAY" || "PAUSED" ? (<img className={Styles.crest} src={match.homeTeam.crest} alt={`Home Team Crest`} />) : (<><p>{`K.O: ${time}`}</p> <img className={Styles.crest} src={match.homeTeam.crest} alt={`Home Team Crest`} /></>) }
-                        
+                        <img className={Styles.crest} src={match.homeTeam.crest} alt={`Home Team Crest`} />
                         <p>{`${match.homeTeam.name}`}</p>
-                        {match.status !== "SCHEDULED" || "POSTPONED" || "SUSPENDED" || "CANCELLED" ? 
-                        ( 
-                        <>
-                            <p>{match.score.fullTime.home} - {match.score.fullTime.away}</p>
-                        </>
-                        )
-                        : 
-                        (
-                        <>
-                            {match.status == 'POSTPONED' ? (<p>Postponed</p>) : (<p>{time}</p>)}
-                            
-                        </>
-                        )
-                        }
-                        
+                        {match.status === "TIMED" || "SCHEDULED" ? <p>{matchTime}</p> : 
+                            (match.status !== "POSTPONED" && match.status !== "SUSPENDED" && match.status !== "CANCELLED" ? 
+                                (
+                                    <>
+                                        <p>{match.score.fullTime.home} - {match.score.fullTime.away}</p>
+                                    </>
+                                )
+                                : 
+                                (
+                                    <>
+                                        <p>{match.status}</p>
+                                    </>
+                                )
+                            )
+                        }                   
                         <p>{match.awayTeam.name}</p>
                         <img className={Styles.crest} src={match.awayTeam.crest} alt={`Away Team Crest`} />
                     </section>
